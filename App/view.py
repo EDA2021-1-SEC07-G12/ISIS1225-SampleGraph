@@ -23,7 +23,7 @@
  * Dario Correal
  *
  """
-
+import time
 
 import sys
 import config
@@ -94,15 +94,22 @@ def optionFive(cont, destStation):
 
 
 def optionSix(cont, destStation):
+    start_time = time.process_time()
     path = controller.minimumCostPath(cont, destStation)
+    contador=0
     if path is not None:
         pathlen = stack.size(path)
         print('El camino es de longitud: ' + str(pathlen))
         while (not stack.isEmpty(path)):
             stop = stack.pop(path)
             print(stop)
+            contador+=1
     else:
         print('No hay camino')
+    stop_time = time.process_time()
+    elapsed_time_mseg = (stop_time - start_time)*1000
+    print(elapsed_time_mseg)
+    print(contador)
 
 
 def optionSeven(cont):
