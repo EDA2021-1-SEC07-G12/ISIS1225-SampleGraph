@@ -73,7 +73,7 @@ def newAnalyzer():
 
 
 # Funciones para agregar informacion al grafo
-
+    
 def addStopConnection(analyzer, lastservice, service):
     """
     Adiciona las estaciones al grafo como vertices y arcos entre las
